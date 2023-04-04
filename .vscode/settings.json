@@ -34,5 +34,6 @@
         "typeinfo": "cpp",
         "complex": "cpp",
         "deque": "cpp"
-    }
+    },
+    "git.autofetch": true
 }

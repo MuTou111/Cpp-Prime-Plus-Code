@@ -43,7 +43,7 @@ bool Stack<Type>::push(const Type &item)
 {
     if (top < Max)
     {
-        item[top++] = item;
+        items[top++] = item;
         return true;
     }
     else
@@ -55,7 +55,7 @@ bool Stack<Type>::pop(Type &item)
 {
     if (top > 0)
     {
-        item = item[--top];
+        item = items[--top];
         return true;
     }
     else
