@@ -19,7 +19,7 @@ public:
     Stack(const Stack &st);
     ~Stack() { delete[] items; }
     bool isempty() { return top == 0; }
-    bool isfull() { return top = stacksize; }
+    bool isfull() { return top == stacksize; }
     bool push(const Type &item); // add item to stack
     bool pop(Type &item);        // pop top into item
     Stack &operator=(const Stack &st);
