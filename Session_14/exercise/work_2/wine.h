@@ -9,15 +9,14 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-class Wine
+class Wine : private Pair<Array, Array>
 {
 private:
-    Pair <Array, Array> data;
     char name[50];
     int n;
 
 public:
-    Wine() : data(Array(0), Array(0)), n(0)
+    Wine() : Pair(Array(0), Array(0)), n(0)
     {
         name[0] = '\0';
     }
@@ -29,13 +28,13 @@ public:
     int sum() const;
 };
 
-Wine::Wine(const char *l, int y, const int yr[], const int bot[]) : data(Array(yr, y), Array(bot, y))
+Wine::Wine(const char *l, int y, const int yr[], const int bot[]) : Pair(Array(yr, y), Array(bot, y))
 {
     strcpy(name, l);
     n = y;
 }
 
-Wine::Wine(const char *l, int y) : data()
+Wine::Wine(const char *l, int y) : Pair()
 {
     strcpy(name, l);
     n = y;
@@ -43,8 +42,8 @@ Wine::Wine(const char *l, int y) : data()
 
 void Wine::GetBottles()
 {
-    data.first().resize(n, 0);
-    data.second().resize(n, 0);
+    Pair::first().resize(n, 0);
+    Pair::second().resize(n, 0);
     while (cin.get() != '\n')
         continue;
     int year, bottle;
@@ -65,8 +64,8 @@ void Wine::GetBottles()
             i--;
             continue;
         }
-        data.first()[i] = year;
-        data.second()[i] = bottle;
+        Pair::first()[i] = year;
+        Pair::second()[i] = bottle;
     }
 }
 
@@ -76,13 +75,13 @@ void Wine::Show() const
     cout << "\tYear\tBottles\n";
     for (int i = 0; i < n; i++)
     {
-        cout << "\t" << data.first()[i] << "\t" << data.second()[i] << endl;
+        cout << "\t" << Pair::first()[i] << "\t" << Pair::second()[i] << endl;
     }
 }
 
 int Wine::sum() const
 {
-    return data.second().sum();
+    return Pair::second().sum();
 }
 
 #endif
