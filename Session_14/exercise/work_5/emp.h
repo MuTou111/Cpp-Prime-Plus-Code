@@ -1,4 +1,6 @@
 // emp.h --- header file for abstr_emp class and children
+#ifndef EMP_H_
+#define EMP_H_
 
 #include <iostream>
 #include <string>
@@ -22,7 +24,7 @@ public:
 
 class employee : public abstr_emp
 {
-private:
+public:
     employee();
     employee(const std::string &fn, const std::string &ln, const std::string &j);
     virtual void ShowAll() const;
@@ -80,3 +82,5 @@ public:
     virtual void ShowAll() const;
     virtual void SetAll();
 };
+
+#endif
