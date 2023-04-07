@@ -71,7 +71,7 @@ QueueTP<Item>::~QueueTP()
 template <class Item>
 bool QueueTP<Item>::enqueue(const Item &item)
 {
-    if (is full())
+    if (isfull())
         return false;
     Node *add = new Node(item); // create node
     // on failure, new throws std::bad_alloc exception
