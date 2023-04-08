@@ -35,5 +35,6 @@
         "complex": "cpp",
         "deque": "cpp"
     },
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.fontSize": 18
 }
