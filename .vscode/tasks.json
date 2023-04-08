@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "/usr/bin/g++",
+            "command": "g++",
             "args": [
                 "-g",
                 "-std=c++11",
@@ -21,7 +21,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++ 生成活动文件",
-            "command": "/usr/bin/g++",
+            "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
