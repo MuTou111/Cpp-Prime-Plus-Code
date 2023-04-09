@@ -2,6 +2,8 @@
 #ifndef TV_H_
 #define TV_H_
 
+class Remote;
+
 class Tv
 {
 public:
@@ -38,6 +40,7 @@ public:
     void set_mode() { mode = (mode == Antenna) ? Cable : Antenna; }
     void set_input() { input = (input == TV) ? DVD : TV; }
     void settings() const; // display all settings
+    void changestate(Remote &r);
 
 private:
     int state;      // on or off
@@ -50,12 +53,20 @@ private:
 
 class Remote
 {
+public:
+    enum State
+    {
+        Normal,
+        Interaction
+    };
+
 private:
     friend class Tv;
     int mode; // controls TV or DVD
+    State state;
 
 public:
-    Remote(int m = Tv::TV) : mode(m) {}
+    Remote(int m = Tv::TV) : mode(m), state(Normal) {}
     bool volup(Tv &t) { return t.volup(); }
     bool voldown(Tv &t) { return t.voldown(); }
     void onoff(Tv &t) { t.onoff(); }
@@ -64,6 +75,7 @@ public:
     void set_chan(Tv &t, int c) { t.channel = c; }
     void set_mode(Tv &t) { t.set_mode(); }
     void set_input(Tv &t) { t.set_input(); }
+    void show_state() const;
 };
 
 #endif

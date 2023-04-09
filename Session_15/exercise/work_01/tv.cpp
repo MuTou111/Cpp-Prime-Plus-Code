@@ -54,3 +54,19 @@ void Tv::settings() const
         cout << "Input = " << (input == TV ? "TV" : "DVD") << endl;
     }
 }
+
+void Tv::changestate(Remote &r)
+{
+    if (state == Off)
+        std::cout << "Tv is not opened!\n";
+    else
+        r.state = (r.state == r.Normal) ? r.Interaction : r.Normal;
+}
+
+void Remote::show_state() const
+{
+    if (state == Normal)
+        std::cout << "State is Normal.\n";
+    else
+        std::cout << "State is Interaction.\n";
+}
