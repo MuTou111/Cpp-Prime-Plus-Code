@@ -27,15 +27,10 @@ int main()
                  << " is " << z << endl;
             cout << "Enter next set of numbers <q to quit>: ";
         }
-        catch (bad_hmean &bg) // start of catch block
+        catch (error &er)
         {
-            cout << bg.waht();
-            cout << "Try again.\n";
-            continue;
-        }
-        catch (bad_gmean &hg)
-        {
-            cout << hg.what();
+            cout << er.what();
+            er.mesg();
             cout << "Sorry, you don't get to play any more.\n";
             break;
         } // end of catch block
@@ -47,13 +42,13 @@ int main()
 double hmean(double a, double b)
 {
     if (a == -b)
-        throw bad_hmean();
+        throw bad_hmean(a, b);
     return 2.0 * a * b / (a + b);
 }
 
 double gmean(double a, double b)
 {
     if (a < 0 || b < 0)
-        throw bad_gmean();
+        throw bad_gmean(a, b);
     return std::sqrt(a * b);
 }
