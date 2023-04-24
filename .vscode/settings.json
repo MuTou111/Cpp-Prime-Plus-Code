@@ -49,7 +49,9 @@
         "string_view": "cpp",
         "system_error": "cpp",
         "numbers": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "list": "cpp",
+        "optional": "cpp"
     },
     "git.autofetch": true,
     "editor.fontSize": 18
