@@ -10,7 +10,11 @@
                 "-std=c++11",
                 "${fileDirname}/*.cpp",
                 "-o",
-                "${fileDirname}/build/a.out"
+                "${fileDirname}/build/a.out",
+                "-I",
+                "C:/Program Files/mingw64",
+                "-I",
+                "C:/Program Files/boost/boost_1_82_0"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -27,7 +31,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I",
+                "C:/Program Files/mingw64",
+                "-I",
+                "C:/Program Files/boost/boost_1_82_0"
             ],
             "options": {
                 "cwd": "${fileDirname}"
