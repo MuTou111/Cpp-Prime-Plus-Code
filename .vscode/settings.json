@@ -51,7 +51,8 @@
         "numbers": "cpp",
         "valarray": "cpp",
         "list": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "format": "cpp"
     },
     "git.autofetch": true,
     "editor.fontSize": 18

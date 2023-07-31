@@ -7,7 +7,7 @@
             "command": "g++",
             "args": [
                 "-g",
-                "-std=c++11",
+                "-std=c++23",
                 "${fileDirname}/*.cpp",
                 "-o",
                 "${fileDirname}/build/a.out",
